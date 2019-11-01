@@ -10,7 +10,7 @@ import { connect } from 'dva';
 import { Icon } from 'antd';
 import { formatMessage } from 'umi-plugin-react/locale';
 import Authorized from '@/utils/Authorized';
-import RightContent from '@/components/GlobalHeader/RightContent';
+// import RightContent from '@/components/GlobalHeader/RightContent';
 import { isAntDesignPro } from '@/utils/utils';
 import logo from '../assets/logo.svg';
 
@@ -84,7 +84,7 @@ const BasicLayout = props => {
   useEffect(() => {
     if (dispatch) {
       dispatch({
-        type: 'user/fetchCurrent',
+        type: 'user/me',
       });
       dispatch({
         type: 'settings/getSetting',
@@ -116,13 +116,13 @@ const BasicLayout = props => {
         return <Link to={menuItemProps.path}>{defaultDom}</Link>;
       }}
       breadcrumbRender={(routers = []) => [
-        {
-          path: '/',
-          breadcrumbName: formatMessage({
-            id: 'menu.home',
-            defaultMessage: 'Home',
-          }),
-        },
+        // {
+        //   path: '/',
+        //   breadcrumbName: formatMessage({
+        //     id: 'menu.home',
+        //     defaultMessage: '呵呵',
+        //   }),
+        // },
         ...routers,
       ]}
       itemRender={(route, params, routes, paths) => {
@@ -135,8 +135,8 @@ const BasicLayout = props => {
       }}
       footerRender={footerRender}
       menuDataRender={menuDataRender}
-      formatMessage={formatMessage}
-      rightContentRender={rightProps => <RightContent {...rightProps} />}
+      // formatMessage={formatMessage}
+      // rightContentRender={rightProps => <RightContent {...rightProps} />}
       {...props}
       {...settings}
     >

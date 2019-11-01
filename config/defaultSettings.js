@@ -1,14 +1,14 @@
 export default {
   navTheme: 'dark',
   primaryColor: '#1890FF',
-  layout: 'sidemenu',
+  layout: 'topmenu',
   contentWidth: 'Fluid',
   fixedHeader: false,
   autoHideHeader: false,
   fixSiderbar: false,
   colorWeak: false,
   menu: {
-    locale: true,
+    locale:false,
   },
   title: 'Ant Design Pro',
   pwa: false,

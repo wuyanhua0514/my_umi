@@ -1,10 +1,26 @@
 import request from '@/utils/request';
-export async function query() {
-  return request('/api/users');
+
+/**
+ *
+ *用户本身权限
+ * @export
+ * @param {*} params
+ * @returns
+ */
+async function fakeAccountLogin(params) {
+  return request('/permission/me');
 }
-export async function queryCurrent() {
-  return request('/api/currentUser');
+
+/**
+ *登出
+ *
+ * @export
+ * @returns
+ */
+async function accountlogout() {
+  return request('/logout',{
+    method:'POST'
+  });
 }
-export async function queryNotices() {
-  return request('/api/notices');
-}
+export { accountlogout, fakeAccountLogin };
+

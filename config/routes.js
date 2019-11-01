@@ -10,34 +10,57 @@ const Routes= [
         },
       ],
     },
+    // {
+    //   path: '/',
+    //   component: '../layouts/SecurityLayout',
+    //   routes: [
+    //     {
+    //       path: '/',
+    //       component: '../layouts/BasicLayout',
+    //       authority: ['admin', 'user'],
+    //       routes: [
+    //         {
+    //           path: '/',
+    //           redirect: '/welcome',
+    //         },
+    //         {
+    //           path: '/welcome',
+    //           name: 'welcome',
+    //           icon: 'smile',
+    //           component: './Welcome',
+    //         },
+    //         {
+    //           component: './404',
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       component: './404',
+    //     },
+    //   ],
+    // },
     {
       path: '/',
-      component: '../layouts/SecurityLayout',
+      component: '../layouts/BasicLayout',
+      Routes: ['src/pages/Authorized'],
       routes: [
         {
           path: '/',
-          component: '../layouts/BasicLayout',
-          authority: ['admin', 'user'],
-          routes: [
-            {
-              path: '/',
-              redirect: '/welcome',
-            },
-            {
-              path: '/welcome',
-              name: 'welcome',
-              icon: 'smile',
-              component: './Welcome',
-            },
-            {
-              component: './404',
-            },
-          ],
+          redirect: '/welcome',
+        },
+        {
+          path: '/welcome',
+          name: 'welcome',
+          icon: 'smile',
+          component: './Welcome',
         },
         {
           component: './404',
         },
       ],
+    },
+    {
+      component: './404',
     },
     {
       component: './404',
